@@ -27,7 +27,7 @@ class Stack(LinkedList):
         Pops the item at the top of the stack
         """
         if not self.len:
-            raise Exception("Empty Stack")
+            raise Exception("Popping from empty Stack")
         return self.delete_index(0)
 
 
