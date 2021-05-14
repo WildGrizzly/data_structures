@@ -34,6 +34,13 @@ class LinkedList:
         self.__tail = self.__Node(None, self.__head)
         self.__head.right = self.__tail
 
+    def clear(self):
+        self.len = 0
+        self.__head = self.__Node(None)
+        self.__tail = self.__Node(None, self.__head)
+        self.__head.right = self.__tail
+
+
     def __len__(self):
         """
         Returns the length of the linked list
@@ -91,17 +98,13 @@ class LinkedList:
             runner = self.__tail.left
             for i in range(self.len - ind):
                 runner = runner.left
-            runner.left.right = runner.right
-            runner.right.left = runner.left
-            return runner.data
         else:
             runner = self.__head.right
             for i in range(ind):
                 runner = runner.right
-                
-            runner.left.right = runner.right
-            runner.right.left = runner.left
-            return runner.data
+        runner.left.right = runner.right
+        runner.right.left = runner.left
+        return runner.data
 
 
     def delete_item(self, item):
@@ -120,6 +123,25 @@ class LinkedList:
         runner.right.left = runner.left
         return runner.data
         
+
+    def item_at_index(self, ind: int):
+        """
+        Returns item at the respective index
+        """
+        if ind < 0 or ind >= self.len:
+            raise Exception(f"Index:{ind}, out of the bounds of LinkedList")
+        from_back = ind >= (self.len / 2)
+        runner = None
+        if from_back:
+            runner = self.__tail.left
+            for i in range(self.len - ind):
+                runner = runner.left
+        else:
+            runner = self.__head.right
+            for i in range(ind):
+                runner = runner.right
+
+        return runner.data
 
 if __name__ == "__main__":
     main()
