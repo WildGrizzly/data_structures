@@ -188,11 +188,5 @@ class DLL:
     def __len__(self):
         return self.size
 
-    def __str__(self):
-        ans = ""
-        for ele in self:
-            ans += str(ele) + " -> "
-        return ans[:-4]
-
 if __name__ == "__main__":
     main()
