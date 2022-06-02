@@ -23,8 +23,6 @@ class Graph(metaclass=ABCMeta):
                 callable(subclass.__init__) and
                 hasattr(subclass, '__iter__') and
                 callable(subclass.__iter__) and
-                hasattr(subclass, '__next__') and
-                callable(subclass.__next__) and
                 hasattr(subclass, '__eq__') and
                 callable(subclass.__eq__) and
                 hasattr(subclass, '__len__') and
@@ -99,13 +97,6 @@ class Graph(metaclass=ABCMeta):
     def __iter__(self):
         """
         Iterates through the vertices of the Graph
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def __next__(self):
-        """
-        Assists __iter__ going through the vertices of the Graph
         """
         raise NotImplementedError
 
