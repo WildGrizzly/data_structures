@@ -37,10 +37,14 @@ class Heap:
         self.__top = None
 
     def add(self, item):
-        pass
+        if self.len == 0:
+            self.__top = self.__Node(item)
+            return
+        
 
-    def __heapify(self):
-        pass
+    def __heapify(self, node):
+        
+        if node == self.__top:
 
     def pop(self):
         """
