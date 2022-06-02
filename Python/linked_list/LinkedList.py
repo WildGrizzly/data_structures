@@ -143,5 +143,6 @@ class LinkedList:
 
         return runner.data
 
+
 if __name__ == "__main__":
     main()

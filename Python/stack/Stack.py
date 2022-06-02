@@ -1,4 +1,4 @@
-from LinkedList import LinkedList
+from linked_list.LinkedList import LinkedList
 
 def main():
     t = Stack(int)

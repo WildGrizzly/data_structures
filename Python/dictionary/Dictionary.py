@@ -1,21 +1,5 @@
 
-def main():
-    #test = DLL()
-    #n1 = test.insert('hello')
-    #n2 = test.insert('becky')
-    #for ele in test:
-    #    print(ele)
-
-    #print(test)
-    #print(n1)
-    #print(n2)
-
-    #test.delete(n1)
-    #for ele in test:
-    #    print(ele)
-
-    #print(n2)
-
+def main(): 
     test = Dictionary()
     print(test)
     print("test[4] = 'hello'")
